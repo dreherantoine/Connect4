@@ -1,6 +1,7 @@
 ﻿using FluentAssertions;
 using Connect4.Models;
 using Connect4.Models.Boards;
+using System.Collections.ObjectModel;
 
 namespace Connect4Test
 {
@@ -13,7 +14,7 @@ namespace Connect4Test
             Board board = new Board();
 
             // Act
-            List<Slot> grid = board.Grid;
+            ObservableCollection<Slot> grid = board.Grid;
 
             // Assert
             grid

@@ -9,14 +9,18 @@
     <ScrollView>
         <VerticalStackLayout Padding="30,0" 
                              Spacing="25">
-            
+            <Label x:Name="Title"
+                   Text="{Binding Title}"
+                   Style="{StaticResource Headline}"
+                   SemanticProperties.HeadingLevel="Level1" />
             <CollectionView ItemsSource="{Binding Board.Grid}"
-                            ItemsLayout="VerticalGrid, 7">
+                            ItemsLayout="VerticalGrid, 7"
+                            Margin="10">
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="models:Slot">
-                        <Button Text="{Binding Value}"
-                                Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainViewModel}}, Path=OnPlay}" 
-                                CommandParameter="{Binding .}" />
+                        <Button Command="{Binding Source={RelativeSource AncestorType={x:Type local:MainViewModel}}, Path=OnPlay}" 
+                                CommandParameter="{Binding .}"
+                                BackgroundColor="{Binding Value}"/>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>

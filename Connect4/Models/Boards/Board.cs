@@ -1,4 +1,6 @@
-﻿using System.Collections.ObjectModel;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using System.Collections.ObjectModel;
+using static System.Reflection.Metadata.BlobBuilder;
 
 namespace Connect4.Models.Boards;
 
@@ -15,9 +17,9 @@ public class Board
     {
         ObservableCollection<Slot> grid = new ObservableCollection<Slot>();
 
-        for (int column = 0; column < 7; column++)
+        for (int row = 0; row < 6; row++)
         {
-            for (int row = 0; row < 6; row++)
+            for (int column = 0; column < 7; column++)
             {
                 grid.Add(new Slot(column, row));
             }
@@ -28,15 +30,15 @@ public class Board
 
     public bool PlayerMove(int column, string color)
     {
-        Slot? Slot = this.Grid
-            .Where(Slot => Slot.Column == column)
-            .Where(Slot => Slot.Value == null)
+        Slot? slot = this.Grid
+            .Where(slot => slot.Column == column)
+            .Where(slot => slot.Value == null)
             .LastOrDefault();
 
-        if (Slot == null)
+        if (slot == null)
             return false;
 
-        Slot.SetValue(color);
+        slot.SetValue(color);
 
         return true;
     }
@@ -59,7 +61,6 @@ public class Board
 
     private static bool IsFourConsecutive(IEnumerable<IGrouping<int, Slot>> grid)
     {
-        // Not implemented yet
-        return true;
+        return false;
     }
 }
