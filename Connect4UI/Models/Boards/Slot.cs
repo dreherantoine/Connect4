@@ -1,4 +1,4 @@
-﻿namespace Connect4Models.Boards;
+﻿namespace Connect4UI.Models.Boards;
 
 public class Slot(int column, int row)
 {

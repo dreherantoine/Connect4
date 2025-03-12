@@ -1,6 +1,6 @@
-﻿using Connect4Models;
-using Connect4Models.Boards;
-using FluentAssertions;
+﻿using FluentAssertions;
+using Connect4UI.Models;
+using Connect4UI.Models.Boards;
 
 namespace Connect4Test
 {

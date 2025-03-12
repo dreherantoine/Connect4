@@ -1,4 +1,4 @@
-﻿namespace Connect4Models;
+﻿namespace Connect4UI.Models;
 
 public class Player(string color)
 {

@@ -1,5 +1,5 @@
-﻿using Connect4Models;
-using FluentAssertions;
+﻿using FluentAssertions;
+using Connect4UI.Models;
 
 namespace Connect4Test;
 
