@@ -1,5 +1,6 @@
 ﻿namespace Connect4.Models.Boards;
 
+// Make it ObservableObject
 public class Slot(int column, int row)
 {
     public int Column { get; private set; } = column;

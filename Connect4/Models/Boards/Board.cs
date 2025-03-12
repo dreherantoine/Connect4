@@ -1,17 +1,19 @@
-﻿namespace Connect4.Models.Boards;
+﻿using System.Collections.ObjectModel;
+
+namespace Connect4.Models.Boards;
 
 public class Board
 {
-    public List<Slot> Grid { get; private set; }
+    public ObservableCollection<Slot> Grid { get; private set; }
 
     public Board()
     {
         this.Grid = InitiliazeGrid();
     }
 
-    private static List<Slot> InitiliazeGrid()
+    private static ObservableCollection<Slot> InitiliazeGrid()
     {
-        List<Slot> grid = new List<Slot>();
+        ObservableCollection<Slot> grid = new ObservableCollection<Slot>();
 
         for (int column = 0; column < 7; column++)
         {
