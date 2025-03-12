@@ -4,9 +4,10 @@ using Connect4UI.Models.Boards;
 
 namespace Connect4UI
 {
-    class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel : INotifyPropertyChanged
     {
         private Board _board;
+        public event PropertyChangedEventHandler PropertyChanged;
 
         public Board Board
         {
@@ -18,7 +19,6 @@ namespace Connect4UI
             }
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
